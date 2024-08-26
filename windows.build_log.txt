@@ -1,0 +1,123 @@
+C:\Users\shnmkhk\ws\mtcopy>mvn clean install -DskipTests
+[INFO] Scanning for projects...
+[INFO]
+[INFO] -------------------------< com.rabbit:mtcopy >--------------------------
+[INFO] Building mtcopy 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- clean:3.2.0:clean (default-clean) @ mtcopy ---
+[INFO] Deleting C:\Users\shnmkhk\ws\mtcopy\target
+[INFO]
+[INFO] --- resources:3.3.1:resources (default-resources) @ mtcopy ---
+[INFO] skip non existing resourceDirectory C:\Users\shnmkhk\ws\mtcopy\src\main\resources
+[INFO]
+[INFO] --- compiler:3.7.0:compile (default-compile) @ mtcopy ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\shnmkhk\ws\mtcopy\target\classes
+[INFO]
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ mtcopy ---
+[INFO] skip non existing resourceDirectory C:\Users\shnmkhk\ws\mtcopy\src\test\resources
+[INFO]
+[INFO] --- compiler:3.7.0:testCompile (default-testCompile) @ mtcopy ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- surefire:2.22.2:test (default-test) @ mtcopy ---
+[INFO] Tests are skipped.
+[INFO]
+[INFO] --- jar:2.2:jar (default-jar) @ mtcopy ---
+[INFO] Building jar: C:\Users\shnmkhk\ws\mtcopy\target\mtcopy-1.0-SNAPSHOT.jar
+[INFO]
+[INFO] --- native-image:21.2.0:native-image (default) @ mtcopy ---
+[INFO] ImageClasspath Entry: info.picocli:picocli:jar:4.1.4:compile (file:///C:/Users/shnmkhk/.m2/repository/info/picocli/picocli/4.1.4/picocli-4.1.4.jar)
+[INFO] ImageClasspath Entry: info.picocli:picocli-jansi-graalvm:jar:1.1.0:compile (file:///C:/Users/shnmkhk/.m2/repository/info/picocli/picocli-jansi-graalvm/1.1.0/picocli-jansi-graalvm-1.1.0.jar)
+[INFO] ImageClasspath Entry: org.fusesource.jansi:jansi:jar:1.18:compile (file:///C:/Users/shnmkhk/.m2/repository/org/fusesource/jansi/jansi/1.18/jansi-1.18.jar)
+[INFO] ImageClasspath Entry: com.rabbit:mtcopy:jar:1.0-SNAPSHOT (file:///C:/Users/shnmkhk/ws/mtcopy/target/mtcopy-1.0-SNAPSHOT.jar)
+[WARNING] Major.Minor version mismatch between native-image-maven-plugin (21.2.0) and native-image executable (Unknown)
+[INFO] Executing: C:\Program Files\GraalVM\graalvm-community-openjdk-22.0.2+9.1\lib\svm\bin\native-image.exe -cp C:\Users\shnmkhk\.m2\repository\info\picocli\picocli\4.1.4\picocli-4.1.4.jar;C:\Users\shnmkhk\.m2\repository\info\picocli\picocli-jansi-graalvm\1.1.0\picocli-jansi-graalvm-1.1.0.jar;C:\Users\shnmkhk\.m2\repository\org\fusesource\jansi\jansi\1.18\jansi-1.18.jar;C:\Users\shnmkhk\ws\mtcopy\target\mtcopy-1.0-SNAPSHOT.jar -H:+UnlockExperimentalVMOptions -H:Class=com.rabbit.MTCopy -H:Name=mtcopy
+========================================================================================================================
+GraalVM Native Image: Generating 'mtcopy' (executable)...
+========================================================================================================================
+For detailed information and explanations on the build output, visit:
+https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+------------------------------------------------------------------------------------------------------------------------
+[1/8] Initializing...                                                                                   (14.1s @ 0.08GB)
+ Java version: 22.0.2+9, vendor version: GraalVM CE 22.0.2+9.1
+ Graal compiler: optimization level: 2, target machine: x86-64-v3
+ C compiler: cl.exe (microsoft, x64, 19.41.34120)
+ Garbage collector: Serial GC (max heap size: 80% of RAM)
+ 1 user-specific feature(s):
+ - com.oracle.svm.thirdparty.gson.GsonFeature
+------------------------------------------------------------------------------------------------------------------------
+ 1 experimental option(s) unlocked:
+ - '-H:Name' (alternative API option(s): -o mtcopy; origin(s): command line)
+------------------------------------------------------------------------------------------------------------------------
+Build resources:
+ - 19.83GB of memory (62.5% of 31.71GB system memory, determined at start)
+ - 20 thread(s) (100.0% of 20 available processor(s), determined at start)
+[2/8] Performing analysis...  [*****]                                                                   (12.4s @ 0.41GB)
+    4,298 reachable types   (76.8% of    5,597 total)
+    5,487 reachable fields  (47.0% of   11,679 total)
+   20,923 reachable methods (49.4% of   42,339 total)
+    1,475 types,    73 fields, and   889 methods registered for reflection
+       83 types,   174 fields, and   142 methods registered for JNI access
+        3 native libraries: crypt32, ncrypt, version
+[3/8] Building universe...                                                                               (2.5s @ 0.37GB)
+[4/8] Parsing methods...      [*]                                                                        (1.0s @ 0.44GB)
+[5/8] Inlining methods...     [***]                                                                      (0.9s @ 0.48GB)
+[6/8] Compiling methods...    [***]                                                                     (10.8s @ 0.43GB)
+[7/8] Laying out methods...   [**]                                                                       (2.0s @ 0.51GB)
+[8/8] Creating image...       [*]                                                                        (2.0s @ 0.60GB)
+   8.35MB (44.23%) for code area:    12,343 compilation units
+  10.30MB (54.54%) for image heap:  125,196 objects and 66 resources
+ 238.77kB ( 1.23%) for other data
+  18.89MB in total
+------------------------------------------------------------------------------------------------------------------------
+Top 10 origins of code area:                                Top 10 object types in image heap:
+   5.78MB java.base                                            2.48MB byte[] for code metadata
+   1.10MB svm.jar (Native Image)                               1.64MB byte[] for java.lang.String
+ 777.87kB picocli-4.1.4.jar                                    1.21MB java.lang.String
+ 124.27kB jansi-1.18.jar                                       1.13MB java.lang.Class
+ 119.44kB java.logging                                       369.36kB com.oracle.svm.core.hub.DynamicHubCompanion
+  68.83kB jdk.proxy4                                         330.93kB byte[] for general heap data
+  65.56kB org.graalvm.nativeimage.base                       304.64kB java.util.HashMap$Node
+  55.07kB jdk.crypto.mscapi                                  247.53kB java.lang.Object[]
+  47.59kB jdk.proxy1                                         245.13kB java.lang.String[]
+  45.84kB jdk.proxy3                                         224.83kB heap alignment
+ 106.14kB for 9 more packages                                  2.15MB for 1049 more object types
+------------------------------------------------------------------------------------------------------------------------
+Recommendations:
+ HEAP: Set max heap for improved and more predictable memory usage.
+ CPU:  Enable more CPU features with '-march=native' for improved performance.
+------------------------------------------------------------------------------------------------------------------------
+                        2.5s (5.3% of total time) in 367 GCs | Peak RSS: 1.13GB | CPU load: 3.83
+------------------------------------------------------------------------------------------------------------------------
+Build artifacts:
+ C:\Users\shnmkhk\ws\mtcopy\target\mtcopy.exe (executable)
+========================================================================================================================
+Finished generating 'mtcopy' in 47.4s.
+[INFO]
+[INFO] --- jar:2.2:jar (jar) @ mtcopy ---
+[INFO]
+[INFO] --- shade:1.4:shade (default) @ mtcopy ---
+[INFO] Including info.picocli:picocli:jar:4.1.4 in the shaded jar.
+[INFO] Including info.picocli:picocli-jansi-graalvm:jar:1.1.0 in the shaded jar.
+[INFO] Including org.fusesource.jansi:jansi:jar:1.18 in the shaded jar.
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing C:\Users\shnmkhk\ws\mtcopy\target\mtcopy-1.0-SNAPSHOT.jar with C:\Users\shnmkhk\ws\mtcopy\target\mtcopy-1.0-SNAPSHOT-shaded.jar
+[INFO]
+[INFO] --- failsafe:2.22.2:integration-test (default) @ mtcopy ---
+[INFO] Tests are skipped.
+[INFO]
+[INFO] --- failsafe:2.22.2:verify (default) @ mtcopy ---
+[INFO] Tests are skipped.
+[INFO]
+[INFO] --- install:3.1.2:install (default-install) @ mtcopy ---
+[INFO] Installing C:\Users\shnmkhk\ws\mtcopy\dependency-reduced-pom.xml to C:\Users\shnmkhk\.m2\repository\com\rabbit\mtcopy\1.0-SNAPSHOT\mtcopy-1.0-SNAPSHOT.pom
+[INFO] Installing C:\Users\shnmkhk\ws\mtcopy\target\mtcopy-1.0-SNAPSHOT.jar to C:\Users\shnmkhk\.m2\repository\com\rabbit\mtcopy\1.0-SNAPSHOT\mtcopy-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  52.502 s
+[INFO] Finished at: 2024-08-26T23:25:40+05:30
+[INFO] ------------------------------------------------------------------------
